@@ -1,47 +1,42 @@
-const db = require("../database/dbConfig.js");
+const db = require('../database/dbConfig.js');
 
 module.exports = {
   find,
   findById,
+  findPlantsByUser,
   add,
   update,
   remove
 };
 
-// finds plant
 function find() {
-  return db("plants");
+    return db('plants');
 }
 
-// finds plant by specific id
 function findById(id) {
-  return db("plants")
-    .where({ id })
-    .first();
+    return db('plants').where({id});
+};
+
+function findPlantsByUser(user_id) {
+  return db('plants').where({user_id});
 }
 
-// adds new plant
-function add(plant) {
-  return db("plants")
-    .insert(plant)
-    .then(ids => {
-      return findById(ids[0]);
-    });
+function add(plants) {
+    return db('plants').insert(plants)
+        .then((res) => {
+            const id = res[0]
+            return db('plants').where({id: id});
+        })
 }
 
-// updates plant by specific id
 function update(changes, id) {
-  return db("plants")
-    .where({ id })
-    .update(changes)
-    .then(count => {
-      return findById(id);
-    });
+    return db('plants').where({id: id}).update(changes)
+        .then((res) => {
+            return db('plants').where({id});
+        })
 }
 
-// removes plant by specific id
 function remove(id) {
-  return db("plants")
-    .where({ id })
-    .del();
+    return db('plants').where({id: id}).del();
 }
+
