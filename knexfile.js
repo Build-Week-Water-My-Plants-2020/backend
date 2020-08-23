@@ -1,4 +1,11 @@
 // Update with your config settings.
+const localPg = {
+  host: 'localhost',
+  database: 'user',
+  user: 'student',
+  password: 'hired',
+};
+const productionDbConnection = process.env.DATABASE_URL || localPg;
 
 module.exports = {
 
@@ -21,21 +28,22 @@ module.exports = {
     useNullAsDefault: true,
     migrations: {
       directory: './database/migrations',
-      tableName: 'dbmigrations',
     },
-    seeds: { directory: './database/seeds' },
+    seeds: {
+      directory: './database/seeds',
+    },
   },
 
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
-    useNullAsDefault: true,
+    connection: productionDbConnection,
     migrations: {
       directory: './database/migrations',
-      tableName: 'dbmigrations',
     },
-    seeds: { directory: './database/seeds' },
-  }
+    seeds: {
+      directory: './database/seeds',
+    },
+  },
 
 };
 

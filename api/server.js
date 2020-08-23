@@ -1,17 +1,22 @@
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-const server = express();
-const authRouter = require('../auth/auth-router.js');
-const plantsRouter = require('../plants/plants-router.js');
-const authenticate = require('../auth/authenticate-middleware.js');
+  
+const express  = require('express');
+const server   = express();
+const cors     = require('cors');
+const helmet   = require('helmet');
+const login    = require('../router/login.js');
+const register = require('../router/register.js');
+const users    = require('../router/users.js');
+const plants   = require('../router/plants.js');
 
+server.use(express.json());
 server.use(helmet());
 server.use(cors());
-server.use(express.json());
 
-server.use('/api/auth', authRouter);
-server.use('/api/:user_id/plants', authenticate, plantsRouter);
+
+server.use('/api/login', login);
+server.use('/api/register', register);
+server.use('/api/users', users);
+server.use('/api/plants', plants);
 
 server.get('/', (req, res) => {
   res.send('welcome to Water My Plants API')
