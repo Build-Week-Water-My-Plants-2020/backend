@@ -1,20 +1,32 @@
-exports.seed = function(knex) {
-  // Deletes ALL existing entries
-  return knex("users")
-    .del()
+exports.seed = function(knex, Promise) {
+  // Deletes ALL existing entries and resets ids
+  return knex('users')
+    .truncate()
     .then(function() {
-      // Inserts seed entries
-      return knex("users").insert([
-        {
-          username: "Quame",
-          password: "abc123",
-          phone: "12125555555"
+      return knex('users').insert([
+        { 
+          username: 'Quame', 
+          password: 'password', 
+          phoneNumber: '7185551212' 
         },
-        {
-          username: "Destinee",
-          password: "abc123",
-          phone: "16465555555"
-        }
+
+        {  
+          username: 'Destinee', 
+          password: 'password', 
+          phoneNumber: '7575551212' 
+        },
+
+        {  
+          username: 'Tyler', 
+          password: 'password', 
+          phoneNumber: '7575551234' 
+        },
+
+        {  
+          username: 'Julia', 
+          password: 'password', 
+          phoneNumber: '255551212' 
+        },
       ]);
     });
 };
