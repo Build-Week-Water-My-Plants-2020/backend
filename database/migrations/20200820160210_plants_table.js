@@ -1,19 +1,13 @@
 
-exports.up = function(knex) {
-  return knex.schema.createTable('plants', plants => {
-    plants.increments();
-    plants.string('nickname', 255).unique().notNullable();
-    plants.string('species', 255).notNullable();
-    plants.integer('h2oFrequency', 10).notNullable();
-    plants.string('image', 256);
-    plants.integer('user_id')
-      .unsigned()
-      .notNullable()
-      .references('id')
-      .inTable('users')
-      .onUpdate('CASCADE')
-      .onDelete('CASCADE');
-  });
+exports.up = function(knex, Promise) {
+  return knex.schema.createTable('plants', tbl=>{
+      tbl.increments('id');
+      tbl.integer('user_id').notNullable().references('id').inTable('users');
+      tbl.string('nickname').notNullable();
+      tbl.string('h2oFrequency', 10).notNullable();
+      tbl.date('last_water');
+      tbl.string('image', 256);
+});
 };
 
 exports.down = function(knex, Promise) {
