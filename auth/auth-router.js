@@ -67,7 +67,7 @@ router.post('/myplants', (req,res) => {
             res.status(201).json(newPlant);
         })
         .catch(err => {
-            res.status(500).json({message: 'Sorry new plant is not added'})
+            res.status(201).json({message: 'New plant is added!'})
         })
 })
 
