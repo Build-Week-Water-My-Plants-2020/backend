@@ -60,32 +60,31 @@ https://documenter.getpostman.com/view/11310730/T1LVA4HY
 User Table:
 |--------------------------------------------------|
 | id (Primary Key)  | interger          | Not Null |
-|                                       |
+|                   |                   |          |
 | username          | varchar (255)     | Not Null |
-|                                       |
-| password          | varchar (255)     |
-|                                       |
-| phoneNumber       | varchar (255)     |
-|--------------------------------------------------|
+|                   |                   |          |
+| password          | varchar (255)     |          |
+|                   |                   |          |
+| phoneNumber       | varchar (255)     |          |
+|
 
 Plants table:
-
-
-| id (Primary Key)      | interger      | Not Null
-|                       |               | Not Null
-| nickname              | varchar (255) |
-|                       |               |
-| species               | varchar (255) |
-|                       |               |
-| h2oFrenquency         | varchar (255) |
-|                       |               |
-| image                 | varchar (255) |
-|                       |               |
-| dateLastWatered       | varchar (255) |
-|                       |               |
-| notificationTime      | varchar (255) |
-|                       |               |
-| notificationEnabled   | boolean       |
-|                       |               |
-| userid (Foreign Key)  | interger      |
+|--------------------------------------------------|
+| id (Primary Key)      | interger      | Not Null | 
+|                       |               |          |
+| nickname              | varchar (255) | Not Null |
+|                       |               |          |
+| species               | varchar (255) |          |
+|                       |               |          |
+| h2oFrenquency         | varchar (255) |          |
+|                       |               |          |
+| image                 | varchar (255) |          |
+|                       |               |          |
+| dateLastWatered       | varchar (255) |          |
+|                       |               |          |
+| notificationTime      | varchar (255) |          |
+|                       |               |          |
+| notificationEnabled   | boolean       |          |
+|                       |               |          |
+| userid (Foreign Key)  | interger      |          |
 
