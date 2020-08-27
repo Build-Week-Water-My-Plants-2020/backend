@@ -28,7 +28,7 @@ API Endpoints
 | Type	 |   Endpoints	              |    Description
 
 | POST	 |   /api/auth/register	      |    create new user with username, phone number and password
-         |                            |                                                            |
+                                                          
 | POST	 |   /api/auth/login	      |    login valid user with username and password
 
 | POST	 |   /api/auth/myplants	      |    user can add a new plant
