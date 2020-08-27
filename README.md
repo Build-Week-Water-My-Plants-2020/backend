@@ -1,5 +1,7 @@
 # backend
 
+Water My Plants API
+
 https://watermyplants2020.herokuapp.com/
 
 API Endpoints
