@@ -2,19 +2,17 @@
 
 To run the server locally:
 
-1. Fork repo
-2. Clone repo
-3. In terminal cd to repo
-4. In terminal do a npm i
-5. In terminal do a npm run server
+1. Clone repo
+2. In terminal cd to repo
+3. In terminal do a npm i
+4. In terminal do a npm run server
 
 To add or make changes to repo:
 
-1. Add me as a collaborator and reviewer. Github handle is desicurry
 2. Create a branch with git checkout -b <branch-name>
 3. Commit and Push changes to branch
-4. Submit pull request. (DO NOT merge your own pull request)
-5. Once pull request is reviewed it will be merged
+4. Submit pull request
+5. Once pull request is reviewed it needs to be merged to master
 6. After merge you can the do a git pull origin master in terminal 
 
 
